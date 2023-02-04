@@ -1,22 +1,36 @@
-//! Memoized Solution
-const gridTraveler = (m, n, memo = {}) => {
-	const key = m + "," + n;
-	// are the arguments in the memo?
-	if (key in memo) return memo[key];
-	if (m === 1 && n === 1) return 1;
-	if (m === 0 || n === 0) return 0;
-	memo[key] = gridTraveler(m - 1, n, memo) + gridTraveler(m, n - 1, memo);
-	return memo[key];
-};
+/**
+ *
+ * @param {number} n - vertical grid size
+ * @param {number} m - horizontal grid size
+ */
+export default function gridTraveler(n: number, m: number): number {
+	const travelRecursive = (
+		n: number,
+		m: number,
+		memo: Map<string, number>
+	): number => {
+		const key = n + " " + m;
+		if (memo.has(key)) {
+			return <number>memo.get(key);
+		}
 
-//? O^(m*n) Time | O^(m*n) Space
+		if (n == 1 && m == 1) {
+			return 1;
+		}
 
-//! SLOW SOLUTION
-// const gridTraveler = (m, n) => {
-// 	if (m === 1 && n === 1) return 1;
-// 	if (m === 0 || n === 0) return 0;
-// 	return gridTraveler(m - 1, n) + gridTraveler(m, n - 1);
-// };
+		if (n == 0 || m == 0) {
+			return 0;
+		}
+		memo.set(
+			key,
+			travelRecursive(n - 1, m, memo) + travelRecursive(n, m - 1, memo)
+		);
+		return <number>memo.get(key);
+	};
+
+	return travelRecursive(n, m, new Map());
+}
+
 
 console.log(gridTraveler(1, 1));
 console.log(gridTraveler(2, 3));
