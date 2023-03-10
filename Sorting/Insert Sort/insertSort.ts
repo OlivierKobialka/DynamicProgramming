@@ -1,6 +1,9 @@
 let InsertionSort = (array: number[]) => {
 	let i: number = 1;
 	let sortedArray: number[] = array;
+	
+	if (sortedArray.length < 2) return sortedArray;
+
 	while (i < sortedArray.length) {
 		let j: number = i;
 		while (j > 0 && sortedArray[j--] < sortedArray[j]) {
