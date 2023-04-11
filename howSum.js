@@ -26,12 +26,18 @@ const howSum = (targetSum, numbers, memo = {}) => {
 // 	}
 // 	return null;
 // };
+
 // m = target sum
 // n = numbers.length
 //
 // Brute force:
 // time: O(n^m)
 // space: O(m)
+// 
+// Memoized:
+// time: O(n*m^2)
+// space: O(m^2)
+
 
 console.log(howSum(7, [2, 3]));
 console.log(howSum(7, [5, 3, 4, 7]));
