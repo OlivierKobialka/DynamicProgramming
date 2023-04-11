@@ -4,6 +4,8 @@ def Fib(n, memo):
     if n <= 2:
         return 1
     memo[n] = Fib(n - 1, memo) + Fib(n - 2, memo)
+    
+    print(memo [n])
     return memo[n]
 
-Fib(12, {})
+Fib(123, {})
