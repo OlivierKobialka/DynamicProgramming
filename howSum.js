@@ -7,10 +7,14 @@ const howSum = (targetSum, numbers) => {
 		const remainderResult = howSum(remainder, numbers);
 		if (remainderResult !== null) return [...remainderResult, num];
 	}
-    return null
+	return null;
 };
+// m = target sum
+// n = numbers.length
+//
+// time: O(n^m)
 
 console.log(howSum(7, [2, 3]));
 console.log(howSum(7, [5, 3, 4, 7]));
 console.log(howSum(7, [2, 4]));
-console.log(howSum(8, [2, 3, 5, 6]));
+console.log(howSum(8, [3, 5, 6]));
