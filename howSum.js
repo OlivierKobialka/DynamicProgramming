@@ -17,4 +17,4 @@ const howSum = (targetSum, numbers) => {
 console.log(howSum(7, [2, 3]));
 console.log(howSum(7, [5, 3, 4, 7]));
 console.log(howSum(7, [2, 4]));
-console.log(howSum(8, [3, 5, 6]));
+console.log(howSum(300, [95, 9, 6]));
