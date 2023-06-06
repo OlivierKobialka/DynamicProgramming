@@ -70,13 +70,11 @@ function numberToWord(number) {
 		number %= 1000000;
 	}
 
-	// Handle thousands
 	if (number >= 1000) {
 		word += numberToWord(Math.floor(number / 1000)) + " thousand ";
 		number %= 1000;
 	}
 
-	// Handle hundreds
 	if (number >= 100) {
 		word += numberToWord(Math.floor(number / 100)) + " hundred ";
 		number %= 100;
