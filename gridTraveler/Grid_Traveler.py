@@ -1,5 +1,7 @@
 import functools
 
+n = int(input("Enter the number of rows: "))
+m = int(input("Enter the number of columns: "))
 
 @functools.cache
 def gridTraveler(m, n):
@@ -10,5 +12,4 @@ def gridTraveler(m, n):
     else:
         return gridTraveler(m - 1, n) + gridTraveler(m, n - 1)
 
-
-print(gridTraveler(18, 18))
+print(gridTraveler(m, n))
