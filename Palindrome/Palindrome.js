@@ -2,7 +2,7 @@
  * @param {number} x
  * @return {boolean}
  */
-var isPalindrome = function(x) {
+var isPalindrome2 = function(x) {
     
     let text = x.toString();
     for(var i=0;i<text.length/2;i++)
